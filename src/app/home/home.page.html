@@ -93,38 +93,43 @@
       </ion-fab-button>
     </ion-fab>
   </ion-content>
-  <ion-footer>
-    <ion-toolbar>
-      <ion-row>
-        <ion-col size="3">
-          <ion-buttons class="center">
-            <ion-button class="width100">
-              <ion-icon name="home-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-col>
-        <ion-col size="3">
-          <ion-buttons class="center">
-            <ion-button class="width100">
-              <ion-icon name="search-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-col>
-        <ion-col size="3">
-          <ion-buttons class="center">
-            <ion-button class="width100">
-              <ion-icon name="notifications-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-col>
-        <ion-col size="3">
-          <ion-buttons class="center">
-            <ion-button class="width100">
-              <ion-icon name="mail-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-col>
-      </ion-row>
-    </ion-toolbar>
-  </ion-footer>
+
+  <ion-tabs>
+
+    <ion-tab tab="home">
+      <h1>Home</h1>
+    </ion-tab>
+
+    <ion-tab tab="search">
+      <h1>Search</h1>
+    </ion-tab>
+
+    <ion-tab tab="notifications">
+      <h1>Notifications</h1>
+    </ion-tab>
+
+    <ion-tab tab="messages">
+      <h1>Messages</h1>
+    </ion-tab>
+
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="search">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="notifications">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="messages">
+        <ion-icon name="mail-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+    
+  </ion-tabs>
+
 </div>
