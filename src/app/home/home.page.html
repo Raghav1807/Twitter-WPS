@@ -1,49 +1,55 @@
 <ion-menu side="start" menuId="first" contentId="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-avatar class="padl20 width20">
-        <!-- <ion-icon name="person-circle" style></ion-icon> -->
-        <img src="https://img.icons8.com/pastel-glyph/64/000000/person-male--v3.png"/>
-      </ion-avatar>
-      <ion-item>
-      <ion-title class="bold">Your Name</ion-title>
-      <ion-icon (click)="k=!k" class="bluecolor" slot="end" name="chevron-down-outline"></ion-icon><br>
-      <ion-text >@yourid</ion-text>
+      <ion-icon style="margin-top:10px; margin-left:20px; color: gray; background-color: lightgray; font-size: 64px; border-radius: 100px;" name="person"></ion-icon>
+
+      <ion-item class="ion-no-padding" lines="none">
+      <ion-title class="bold">Your Name
+        <br>
+        <ion-text style="font-weight: 100; font-size: medium;" class="ion-no-padding">@yourid</ion-text>
+      </ion-title>
+      <ion-icon (click)="k=!k" class="bluecolor" slot=end name="chevron-down-outline"></ion-icon>
       </ion-item>
+      <br>
+      <ion-text>
+        <span class="bold" style="margin-left: 20px;">42</span> Following <span class="bold" style="margin-left: 20px;">0</span> Followers
+      </ion-text>
+      <br><br>
     </ion-toolbar>
   </ion-header>
   <ion-content [hidden]="k">
     <ion-list>
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="person-outline" slot="start"></ion-icon>
         <ion-label>Profile</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="reader-outline" slot="start"></ion-icon>
         <ion-label>Lists</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="chatbubble-outline" slot="start"></ion-icon>
         <ion-label>Topics</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="bookmark-outline" slot="start"></ion-icon>
         <ion-label>Bookmarks</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="flash-outline" slot="start"></ion-icon>
         <ion-label>Moments</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="star-outline" slot="start"></ion-icon>
         <ion-label>Momentisation</ion-label>
       </ion-item>
     </ion-list>
+    <hr style="border-bottom: 1px; border-style: solid; color: gray">
     <ion-list>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>Settings and privacy</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>Help Centre</ion-label>
       </ion-item>
     </ion-list>
@@ -67,43 +73,36 @@
 </ion-menu>
 
 <div class="ion-page" id="main-content">
-  <ion-header>
-    <ion-toolbar >
-      <ion-buttons slot="start">
-        <ion-menu-button class="bluecolor"></ion-menu-button>
-      </ion-buttons>
-      <!-- <ion-title>Inbox</ion-title> -->
-      <ion-buttons class="center">
-        <ion-button class="bluecolor width100">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-button class="bluecolor">
-          <ion-icon name="sparkles-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+
   <ion-content class="ion-padding">
     <!-- <ion-button expand="block" onclick="openMenu()">Open Menu</ion-button> -->
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="padrb10">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="padrb10" (click)="hideTweet()">
+      <div><span style="position: absolute; margin-left: -100%;margin-top: 30%; text-align: right;"><span *ngIf="hide">Tweet</span></span>
+        <ion-fab-button close-icon="pencil">
+          <ion-icon name="add" size="large"></ion-icon>
+        </ion-fab-button>
+      </div>
       <ion-fab-list side="top">
-        <ion-fab-button closeIcon>
-          <ion-icon name="pencil"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button color="light" class="bluecolor">
-          <ion-icon name="videocam-outline"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button color="light" class="bluecolor">
-          <ion-icon name="image-outline"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button color="light" class="bluecolor">
-          <ion-icon name="barcode-outline"></ion-icon>
-        </ion-fab-button>
+        <!-- <div><span style="position: absolute; margin-left: -120%;margin-top: 30%; text-align: right;">Tweet</span>
+          <ion-fab-button color="light">
+            <ion-icon name="pencil" class="bluecolor" size="large"></ion-icon>
+          </ion-fab-button>
+        </div> -->
+        <div><span style="position: absolute; margin-left: -80%;margin-top: 30%; text-align: right;">Gif</span>
+          <ion-fab-button color="light" size="small">
+            <ion-icon name="videocam-outline" class="bluecolor" size="large"></ion-icon>
+          </ion-fab-button>
+        </div>
+        <div><span style="position: absolute; margin-left: -130%;margin-top: 30%; text-align: right;">Photos</span>
+          <ion-fab-button color="light" size="small">
+            <ion-icon name="image-outline" class="bluecolor" size="large"></ion-icon>
+          </ion-fab-button>
+        </div>
+        <div><span style="position: absolute; margin-left: -130%;margin-top: 30%; text-align: right;">Spaces</span>
+          <ion-fab-button color="light" size="small">
+            <ion-icon name="barcode-outline" class="bluecolor" size="large"></ion-icon>
+          </ion-fab-button>
+        </div>
       </ion-fab-list>
     </ion-fab>
   </ion-content>
