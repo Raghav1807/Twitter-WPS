@@ -1,7 +1,7 @@
   <ion-header>
     <ion-toolbar >
       <ion-buttons slot="start">
-        <ion-menu-button class="bluecolor"></ion-menu-button>
+        <ion-menu-button><ion-icon name="person-circle-outline"></ion-icon></ion-menu-button>
       </ion-buttons>
       <!-- <ion-title>Inbox</ion-title> -->
       <ion-buttons class="center">
@@ -10,7 +10,7 @@
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="end">
-        <ion-button class="bluecolor">
+        <ion-button>
           <ion-icon name="sparkles-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -18,5 +18,27 @@
   </ion-header>
 
 <ion-content>
-  <h1>Hello First Page</h1>
+  <div>
+    <ion-card class="card">
+      <ion-row>
+        <ion-col size="2">
+          <ion-avatar>
+            <ion-icon class="card-image" name="person"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="10">
+          <ion-item>
+            <ion-label class="width70">
+              <span class="nowrap">
+              <div class="bold">
+                Rohit 
+              </div>
+              @rohitsharma
+              </span>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
 </ion-content>
